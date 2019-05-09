@@ -1,0 +1,71 @@
+<h1>
+  Send us a Message / Ask a Question
+</h1>
+
+<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+
+  <h5 *ngIf="success">{{ successMsg }}</h5>
+
+  <label>
+    First Name:
+    <input type="text" formControlName="firstName">
+    <div *ngIf="submitted && messageForm.controls.firstName.errors" class="error">
+      <div *ngIf="messageForm.controls.firstName.errors.required"> {{ firstNameError }} </div>
+    </div>
+  </label>
+
+  <label>
+    Last Name:
+    <input type="text" formControlName="lastName">
+    <div *ngIf="submitted && messageForm.controls.lastName.errors" class="error">
+      <div *ngIf="messageForm.controls.lastName.errors.required"> {{ lastNameError }} </div>
+    </div>
+  </label>
+
+  <label>
+    Message:
+    <textarea formControlName="message"></textarea>
+    <div *ngIf="submitted && messageForm.controls.message.errors" class="error">
+      <div *ngIf="messageForm.controls.message.errors.required"> {{ msgError }}</div>
+    </div>
+  </label>
+
+  <input type="submit" value="Send message" class="cta">
+
+</form>
+
+<div *ngIf="submitted" class="results">
+  <h3> Message Details </h3>
+  <div class="name mt-3">
+    <strong> First Name:</strong>
+    <span>{{ messageForm.controls.firstName.value }}</span>
+  </div>
+
+  <div class="name">
+    <strong> Last Name:</strong>
+    <span>{{ messageForm.controls.lastName.value }}</span>
+  </div>
+
+  <div class="name">
+    <strong> Message:</strong>
+    <span>{{ messageForm.controls.message.value }}</span>
+  </div>
+</div>
+
+<form [formGroup]="myGroup" class="mt-5" (ngSubmit)="onSave()">
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+    <div *ngIf="finished && myGroup.controls.name.errors" class="error">
+      <div *ngIf="myGroup.controls.name.errors.required"> {{ nameError }} </div>
+    </div>
+  </label>
+</form>
+<p>
+  <button (click)="updateName(myGroup.value.name)">
+    Update
+  </button>
+</p>
+<p>
+    Value: {{name}}
+</p>

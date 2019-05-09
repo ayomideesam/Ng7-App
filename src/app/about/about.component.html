@@ -1,0 +1,25 @@
+<h1>
+  <u>
+    About Us
+  </u>
+</h1>
+
+<h1> List of Users </h1>
+
+<ul *ngIf="users">
+  <li *ngFor="let user of users.data">
+    <img [src]="user.avatar">
+    <p>{{ user.first_name }} {{ user.last_name }}</p>
+  </li>
+</ul>
+
+<button (click)="createUser()"> Submit </button>
+
+
+<ul *ngIf="resources" class="mt-5">
+  <li *ngFor="let resource of resources.data" [ngStyle]="{ backgroundColor: resource.color}">
+    <h3 [ngStyle]="{ color: resource.pantone_value}">
+        {{ resource.year }} <span [ngStyle]="{textTransform: 'uppercase'}"> {{ resource.name }} </span>
+    </h3>
+  </li>
+</ul>

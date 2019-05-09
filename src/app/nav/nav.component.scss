@@ -1,0 +1,38 @@
+header {
+  background: #7700FF;
+
+  .logo {
+    font-weight: bold;
+    font-size: 1.2em;
+    text-decoration: none;
+  }
+  .logo:hover {
+    color: darkgrey;
+  }
+
+  nav {
+    justify-self: right;
+
+    ul {
+      list-style-type: none;
+      margin: 0; padding: 0;
+
+      li {
+        float: left;
+
+        a {
+          padding: 1.5em;
+          text-transform: uppercase;
+          font-size: 1em;
+
+          &:hover {
+            background: #8E2BFF;
+            border-radius: 7px;
+            text-decoration: none;
+            margin: 5px;
+          }
+        }
+      }
+    }
+  }
+}

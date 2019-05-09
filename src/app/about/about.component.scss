@@ -1,0 +1,66 @@
+.click {
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.click:hover {
+  background: #1b6d85;
+  color: wheat;
+}
+
+.gray {
+  color: darkgoldenrod;
+}
+
+.large {
+  font-size: 3em;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;padding: 0;
+
+  li {
+    background: rgb(238, 238, 238);
+    padding: 2em;
+    border-radius: 5px;
+    margin-bottom: 7px;
+    display: grid;
+    grid-template-columns: 70px auto;
+
+    p {
+      font-weight: bold;
+      margin-left: 20px;
+    }
+
+    img {
+      border-radius: 50%;
+      width: 100%;
+    }
+  }
+}
+button {
+  border-radius: 6px;
+  background-color: mediumpurple;
+}
+
+
+ul {
+  list-style: none;
+  margin-left: -45px;
+}
+
+li {
+  padding: 2em;
+  border-radius: 5px;
+  margin-bottom: 10px;
+
+  h3 {
+    font-weight: bold;
+  }
+
+  img {
+    border-radius: 50%;
+    width: 100%;
+  }
+}
